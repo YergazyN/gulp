@@ -1,43 +1,13 @@
-@import "fonts";
+@import "helpers/reset";
+@import "helpers/vars";
+@import "helpers/mixins";
 
-@mixin font($font_name, $file_name, $weight, $style) {
-    @font-face { font-family: $font_name; font-display: swap; src: url("../fonts/#{$file_name}.woff") format("woff"), url("../fonts/#{$file_name}.woff2") format("woff2"); font-weight: #{$weight}; font-style: #{$style}; }
-    
-    }   
-
-header{
-    font-size: 18px;
-    background: #ccc;
-
-    p{
-        color: red;
-    }
-
-    display: flex;
-
-    h1{
-        color: green;
-    }
-
-    h2{
-        color: orange;
-    }
-}
-
-span{
-    font-size: 20px;
-    @media (max-width: 767px) {
-        font-size: 15px;        
-    }
-}
-
-div{
-    font-size: 30px;
-    @media (max-width: 767px) {
-        font-size: 20px;        
-    }
-}
 
 body{
-    background-image: url(../img/nutrition.jpg) 0 0 no-repeat;
+    h1{
+        color: $red;
+        @include respond-to(320){
+            color: $blue;
+        }
+    }
 }

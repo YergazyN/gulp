@@ -1,43 +1,16 @@
-header {
-  font-size: 18px;
-  background: #ccc;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-header p {
-  color: red;
+body h1 {
+  color: #d83d3b;
 }
 
-header h1 {
-  color: green;
-}
-
-header h2 {
-  color: orange;
-}
-
-span {
-  font-size: 20px;
-}
-
-div {
-  font-size: 30px;
-}
-
-body {
-  background-image: url(../img/nutrition.jpg) 0 0 no-repeat;
-}
-
-@media (max-width: 767px) {
-  span {
-    font-size: 15px;
-  }
-
-  div {
-    font-size: 20px;
+@media only screen and (max-width: 767px) {
+  body h1 {
+    color: #0064b8;
   }
 }
-
-.webp body { background-image: url(../img/nutrition.webp) 0 0 no-repeat; }
