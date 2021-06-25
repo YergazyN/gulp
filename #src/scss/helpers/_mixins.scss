@@ -16,13 +16,81 @@
   }
 }
 
+@mixin r($point) {
+  @media only screen and (max-width: #{$point}px) { @content; }
+}
+
 @mixin icon($icon){
   background: url('../img/icons/#{$icon}') no-repeat center center;
 }
 
-@mixin flex-center(){
+//flex-boxes
+
+@mixin flex-x($jc, $ai){
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin flex-y($jc, $ai){
+  display: flex;
+  flex-direction:column;
+  justify-content:$jc;
+  align-items: $ai;
+}
+
+
+@mixin btn($width, $height, $color, $font-weight){
   display: flex;
   justify-content: center;
   align-items: center;
+  width: $width;
+  height: $height;
+  font-weight: $font-weight;
+  border-radius: 4px;
+  color: $color;
+  cursor: pointer;
+
+  &:hover{
+    box-shadow: 0 0 4px rgba(#000,.7);
+  }
+
+  @include transite();
 }
 
+@mixin link-btn($p-y, $p-x, $color, $font-weight, $border-color){
+  display: inline-block;
+  padding: $p-y $p-x;
+  font-weight: $font-weight;
+  border:1px solid $border-color;
+  border-radius: 4px;
+  color: $color;
+  cursor: pointer;
+
+  &:hover{
+    text-decoration: none;
+    opacity: .7;
+    box-shadow: 0 0 4px rgba(#000,.7);
+  }
+
+  @include transite();
+}
+
+@mixin link-btn1($p-y, $p-x, $color, $font-weight, $bg, $hover-bg){
+  display: inline-block;
+  padding: $p-y $p-x;
+  font-weight: $font-weight;
+  background: $bg;
+  border-radius: 4px;
+  color: $color;
+  cursor: pointer;
+
+  &:hover{
+    text-decoration: none;
+    background: $hover-bg;
+    box-shadow: 0 0 4px rgba(#000,.4);
+  }
+
+  @include transite();
+}
